@@ -1,0 +1,25 @@
+package com.sjsu.controller;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.sjsu.BO.LoginDetails;
+
+@Controller
+@RequestMapping("tester")
+public class TesterController {
+	
+	@RequestMapping("/showProfileform")
+	public String showLogin(HttpServletRequest request,
+			HttpServletResponse response, @ModelAttribute("loginDetails") LoginDetails loginDetails, Model model){
+		System.out.println("HIiiiii");
+		model.addAttribute("loginDetails", loginDetails);
+		return "LoginPage";
+	}
+
+}

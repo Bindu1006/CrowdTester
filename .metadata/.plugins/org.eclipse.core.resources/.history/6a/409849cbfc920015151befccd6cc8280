@@ -1,0 +1,32 @@
+package com.sjsu.controller;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.sjsu.BO.TesterDetails;
+
+@Controller
+@RequestMapping("register")
+public class registrationController {
+	
+	@RequestMapping("/showTesterRegistration")
+	public String showTesterRegistration(HttpServletRequest request,
+			HttpServletResponse response, @ModelAttribute("testerDetails") TesterDetails testerDetails, Model model){
+		System.out.println("HIiiiii");
+		model.addAttribute("testerDetails", testerDetails);
+		return "TesterRegistrationPage";
+	}
+	
+	@RequestMapping("/registerTester")
+	public String registerTester(HttpServletRequest request,
+			HttpServletResponse response, @ModelAttribute("testerDetails") TesterDetails testerDetails, Model model){
+		System.out.println(testerDetails );
+		return "TesterRegistrationPage";
+	}
+
+}

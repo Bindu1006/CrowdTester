@@ -1,0 +1,19 @@
+package com.sjsu.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.sjsu.dao.ILoginDao;
+
+public class RegistrationServiceImpl implements IRegistrationService {
+
+	private IRegistrationService registrationDao;
+	 
+	
+
+	
+	@Override
+	public String saveTesterDetails() {
+		Strinf result = 
+	}
+
+}

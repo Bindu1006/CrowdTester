@@ -1,0 +1,16 @@
+package com.sjsu.dao;
+
+import org.hibernate.Session;
+
+import com.sjsu.BO.TesterDetails;
+
+public class RegistrationDaoImpl implements IRegistrationDao {
+
+	@Override
+	public String saveTesterDetails(TesterDetails testerDetails) {
+		System.out.println("SAVE TESTER DETAILS ::: In DAO class..");
+		Session session = getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+	}
+
+}

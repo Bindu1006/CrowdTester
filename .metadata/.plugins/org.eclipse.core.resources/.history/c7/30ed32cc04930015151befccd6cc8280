@@ -1,0 +1,6 @@
+package com.sjsu.dao;
+
+public interface IRegistrationDao {
+
+	String saveTesterDetails();
+}

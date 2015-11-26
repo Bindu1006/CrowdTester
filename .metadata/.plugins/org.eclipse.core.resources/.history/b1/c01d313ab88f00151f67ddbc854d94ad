@@ -1,0 +1,11 @@
+package com.sjsu.dao;
+
+import com.sjsu.BO.LoginDetails;
+import com.sjsu.BO.TesterDetails;
+
+public interface ILoginDao {
+
+	void getUsers();
+
+	UserTypeBO authenticateUser(LoginDetails loginDetails);
+}

@@ -1,0 +1,100 @@
+package com.sjsu.controller;
+
+
+import java.io.IOException;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.sjsu.BO.LoginDetails;
+import com.sjsu.BO.TesterDetails;
+import com.sjsu.BO.UserTypeBO;
+import com.sjsu.service.ILoginService;
+
+
+@Controller
+public class LoginController {
+
+	private ILoginService loginService;
+	 
+	public ILoginService getLoginService() {
+		return loginService;
+	}
+
+	@Autowired
+	public void setLoginService(ILoginService loginService) {
+		this.loginService = loginService;
+	}
+	
+	@RequestMapping("/showLogin")
+	public String showLogin(HttpServletRequest request,
+			HttpServletResponse response, @ModelAttribute("loginDetails") LoginDetails loginDetails, Model model){
+		System.out.println("HIiiiii");
+		model.addAttribute("loginDetails", loginDetails);
+		return "LoginPage";
+	}
+	
+	@RequestMapping("/authenticate")
+	public String helloWorld(HttpServletRequest request,
+			HttpServletResponse response, @ModelAttribute("loginDetails") LoginDetails loginDetails, BindingResult result, Model model) throws IOException {
+		System.out.println(loginDetails.getUserName());
+		System.out.println(loginDetails.getPassword());
+		UserTypeBO userTypeBO = loginService.authenticateUser(loginDetails);
+		if (userTypeBO.getUserType().equalsIgnoreCase("NONE")) {
+			return "fail";
+		} else if (userTypeBO.getUserType().equalsIgnoreCase("TESTER")) {
+			return "TesterDashboard";
+		} else {
+			return "AppVenderDashboard";
+		}
+	}
+////	  public String homepage2(ModelMap model,@ModelAttribute("userForm") UserForm user, HttpServletRequest request, HttpServletResponse response){
+////	    System.out.println("blablabla2");
+////	    model.addAttribute("userForm", user);
+////	    return "login";
+////	  }
+//	
+//}
+	
+	@RequestMapping("/showForgotPasswordPage")
+	public String showForgotPasswordPage(HttpServletRequest request,
+			HttpServletResponse response, @ModelAttribute("testerDetails") TesterDetails testerDetails, Model model){
+		System.out.println("::::::showForgotPasswordPage:::::");
+		model.addAttribute("testerDetails", testerDetails);
+		return "ForgotPasswordPage";
+	}
+	
+	@RequestMapping("/verifyEmail")
+	public String verifyEmail(HttpServletRequest request,
+			HttpServletResponse response, @ModelAttribute("testerDetails") TesterDetails testerDetails, Model model){
+		System.out.println("::::::verifyEmail:::::");
+		System.out.println(testerDetails.getEmail());
+		return "success";
+	}
+	
+	@RequestMapping("/showTesterRegistration")
+	public String showTesterRegistration(HttpServletRequest request,
+			HttpServletResponse response, @ModelAttribute("testerDetails") TesterDetails testerDetails, Model model){
+		System.out.println("HIiiiii");
+		model.addAttribute("testerDetails", testerDetails);
+		return "TesterRegistrationPage";
+	}
+	
+	@RequestMapping("/registerTester")
+	public String registerTester(HttpServletRequest request,
+			HttpServletResponse response, @ModelAttribute("testerDetails") TesterDetails testerDetails, Model model){
+		System.out.println(testerDetails);
+		return "TesterRegistrationPage";
+	}
+	
+
+}
+

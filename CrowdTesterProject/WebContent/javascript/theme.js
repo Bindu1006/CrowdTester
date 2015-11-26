@@ -11,6 +11,78 @@ $(document).ready( function() {
 	 
 	        e.preventDefault();
 	    });
+	    
+//	    $('#editProfileData').click(function () {
+//	    	alert("Success");
+//	    $.ajax({
+//	        url: 'editTesterProfile.do',
+//	        data: {
+//	        	Fname: $("#Fname").val(),
+//	        	Lname: $("#Lname").val(),
+//	        	Address: $("#Address").val(),
+//	        	Age: $("#Age").val(),
+//	        	Edu: $("#Edu").val(),
+//	        	Occupation: $("#Occupation").val(),
+//	        },
+//	        type:'post', //either post or get
+//	        dataType: 'json', //get response as json from server
+//	        success:function(data){  //this function is called when the ajax function is successfully executed
+//	              alert("Success");  OR  console.log(data);
+//	         }
+//	    });
+//	    });
+	    
+	    $('#editProfileData').click(function () {
+	    	$("#Fname").prop("disabled",false)
+	    	$("#Lname").prop("disabled",false)
+	    	$("#Address").prop("disabled",false)
+	    	$("#Age").prop("disabled",false)
+	    	$("#Edu").prop("disabled",false)
+	    	$("#Occupation").prop("disabled",false)
+	    	$("#saveProfileData").prop("disabled",false)
+	    	
+	    });
+	    
+	    
+//	    $('a.editFname').click(function () {
+//	    	$("#Fname").prop("disabled",false)
+//	    	$('.editFname').hide();
+//	    	$('.saveFname').show();
+//	    });
+//	    
+//	    $('a.editLname').click(function () {
+//	    	$("#Lname").prop("disabled",false)
+//	    	$('.editLname').hide();
+//	    	$('.saveLname').show();
+//	    });
+//	    
+//	    $('a.editAddress').click(function () {
+//	    	$("#Address").prop("disabled",false)
+//	    	$('.editAddress').hide();
+//	    	$('.saveAddress').show();
+//	    });
+//	    
+//	    $('a.editAge').click(function () {
+//	    	$("#Age").prop("disabled",false)
+//	    	$('.editAge').hide();
+//	    	$('.saveAge').show();
+//	    });
+//	    
+//	    $('a.editEdu').click(function () {
+//	    	$("#Edu").prop("disabled",false)
+//	    	$('.editEdu').hide();
+//	    	$('.saveEdu').show();
+//	    });
+//	    
+//	    $('a.editOccupation').click(function () {
+//	    	$("#Occupation").prop("disabled",false)
+//	    	$('.editOccupation').hide();
+//	    	$('.saveOccupation').show();
+//	    });
+//	    
+//	    $('.saveFname').click(function(e) {
+//	        $('#editTesterFormID').submit();
+//	    });
 	
 	
 	
@@ -40,7 +112,6 @@ $('#hmenu').append($('<div id="hmenu-mobile"></div>'));
 $('#hmenu ul li').has('ul').prepend('<span class="nav-click"><i class="nav-arrow"></i></span>');
 
 $('#hmenu-mobile').click( function(){
-	$('#hmenu>ul').toggle();
 });
 
 $('#hmenu>ul').on('click', '.nav-click', function(){
@@ -52,22 +123,6 @@ $('#hmenu>ul').on('click', '.nav-click', function(){
 	$(this).children('.nav-arrow').toggleClass('nav-rotate');
 	
 });
- 	
-  			 
-   
-   
-   			  
-    
-   
-   
-   
- 
-  						  	
- 
- 
-
-  
-			   
 			 
 	setEqualHeight ( $('section.home .col header') );
 	setEqualHeight ( $('section.home .col p') );

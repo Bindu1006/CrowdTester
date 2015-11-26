@@ -1,0 +1,42 @@
+package com.sjsu.BO;
+
+import java.sql.Blob;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name ="APP_VENDOR_Details")
+public class AppVendorDetails {
+	
+	@Column(name = "COMPANY_NAME", nullable = false)
+	private String companyName;
+	
+	@Column(name = "PHONE", nullable = false)
+	private String phoneNumber;
+	
+	@Column(name = "ADDRESS", nullable = false)
+	private String address;
+	
+	@Column(name = "COMPANY_SIZE", nullable = true)
+	private String companySize;
+	
+	@Column(name = "COMPANY_WEBSITE", nullable = false)
+	private String companyWebsite;
+	
+	@Column(name = "CONTACT_EMAIL", nullable = false)
+	private String contactEmail;
+	
+	@Id
+	@Column(name = "USERNAME", unique = true, nullable = false)
+	private String userName;
+	
+	@Column(name = "PASSWORD", nullable = false)
+	private String password;
+	
+	private Blob profileImage;
+	
+	
+}

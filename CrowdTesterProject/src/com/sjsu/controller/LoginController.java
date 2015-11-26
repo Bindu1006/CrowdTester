@@ -85,7 +85,7 @@ public class LoginController {
 		else if (userTypeBO.getUserType().equalsIgnoreCase("TESTER")) {
 			System.out.println("CONTROLLER::::" + userTypeBO.getTesterDetails());
 			model.addAttribute("testerDetails", userTypeBO.getTesterDetails());
-			redirectAttributes.addFlashAttribute("dataForNextPage", userTypeBO.getTesterDetails());
+			redirectAttributes.addFlashAttribute("testerDetails", userTypeBO.getTesterDetails());
 			modelAndView.setViewName("redirect:" + "../tester/showTesterDashboard.do");
 			return modelAndView;
 			//return "redirect:" + "../tester/showTesterDashboard.do";

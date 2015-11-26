@@ -31,19 +31,113 @@
         <li><a href="#tab3">Devices</a></li>
         <li><a href="#tab4">Contact</a></li>
     </ul>
+     <form:form id="editTesterFormID" method="post" modelAttribute="testerDetails" action="editTesterProfile.do">
  
     <div class="tab-content">
         <div id="tab1" class="tab active">
             <div>
-            	<h4>USERNAME: </h4>
-            	<h4><c:out value="${testerDetails.userName}"></c:out></h4>
+            	<label>USERNAME        : </label>
+            	<c:out value="${testerDetails.userName}"></c:out>
             </div>
-            <p>Donec pulvinar neque sed semper lacinia. Curabitur lacinia ullamcorper nibh; quis imperdiet velit eleifend ac. Donec blandit mauris eget aliquet lacinia! Donec pulvinar massa interdum risus ornare mollis.</p>
+            <div>
+             
+             <br/><br/><br/>
+             <table width=100%>
+             <tr>
+             <td><label>Your email        : </label></td>
+             <td><label>LinkedIn url        : </label></td>
+             </tr>
+             <tr>
+             <td><form:input path="email" /></td>
+             <td><form:input path="email" /></td>
+             </tr>
+             <tr><td>&nbsp;</td></tr>
+             <tr><td>&nbsp;</td></tr>
+             <tr><td>&nbsp;</td></tr>
+             <tr>
+             <td><label>Balance Payment        : </label></td>
+             <td><label>Ranking        : </label></td>
+             </tr>
+             <tr>
+             <td><form:input path="email" /></td>
+             <td><form:input path="email" /></td>
+             </tr>
+             <tr><td>&nbsp;</td></tr>
+             <tr><td>&nbsp;</td></tr>
+             <tr><td>&nbsp;</td></tr>
+             <tr>
+             <td colspan="2" align="center"><label>Password        : </label></td>
+             </tr>
+             <tr>
+             <td colspan="2" align="center"><form:input path="password" /></td>
+             </tr>
+             <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+             <tr>
+             <td colspan="2" align="center"><label>Confirm Password        : </label></td>
+             </tr>
+             <tr>
+             <td colspan="2" align="center"><form:input path="password" /></td>
+             </tr>
+             </table>
+       
+            </div>
         </div>
  
         <div id="tab2" class="tab">
-            <p>Tab #2 content goes here!</p>
-            <p>Donec pulvinar neque sed semper lacinia. Curabitur lacinia ullamcorper nibh; quis imperdiet velit eleifend ac. Donec blandit mauris eget aliquet lacinia! Donec pulvinar massa interdum risus ornare mollis. In hac habitasse platea dictumst. Ut euismod tempus hendrerit. Morbi ut adipiscing nisi. Etiam rutrum sodales gravida! Aliquam tellus orci, iaculis vel.</p>
+        
+         <table width=100% align="center">
+             <tr>
+             <td><label>Your first name        : </label></td>
+             <td align="left"><label>Your last name         : </label></td>
+             </tr>
+             <tr>
+             <td><form:input id="Fname" path="firstName" cssStyle="width: 95%" disabled="true"/></td>
+             <td><form:input id="Lname" path="lastName" cssStyle="width: 95%" disabled="true"/></td>
+             </tr>
+            <!--  <tr>
+             <td align="left"><a class="editFname" href="#" >change</a>
+             <a hidden="true" class="saveFname" href="" >save</a></td>
+             <td align="left"><a class="editLname" href="#" >change</a>
+             <a hidden="true" class="saveLname" href="#" >save</a></td>
+             </tr> -->
+             <tr><td>&nbsp;</td></tr>
+             <tr>
+             <td><label>Your Address        : </label></td>
+             <td><label>Your DOB        : </label></td>
+             </tr>
+             <tr>
+             <td><form:input id="Address" path="address" cssStyle="width: 95%" disabled="true"/></td>
+             <td><form:input id="Age" path="age" cssStyle="width: 95%" disabled="true"/></td>
+             </tr>
+             <!--  <tr>
+             <td align="left"><a class="editAddress" href="#" >change</a>
+             <a hidden="true" class="saveAddress" href="#" >save</a></td>
+             <td align="left"><a class="editAge" href="#" >change</a>
+             <a hidden="true" class="saveAge" href="#" >save</a></td>
+             </tr> -->
+             <tr><td>&nbsp;</td></tr>
+             <tr>
+             <td><label>Education        : </label></td>
+             <td><label>Occupation        : </label></td>
+             </tr>
+             <tr>
+             <td><form:input id="Edu" path="education" cssStyle="width: 95%" disabled="true"/></td>
+             <td><form:input id="Occupation" path="occupation" cssStyle="width: 95%" disabled="true"/></td>
+             </tr>
+             <!--  <tr>
+             <td align="left"><a class="editEdu" href="#" >change</a>
+             <a hidden="true" class="saveEdu" href="#" >save</a></td>
+             <td align="left"><a class="editOccupation" href="#" >change</a>
+             <a hidden="true" class="saveOccupation" href="#" >save</a></td>
+             </tr> -->
+             
+             <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
+             
+         </table>
+        <button type="button" id="editProfileData" value="EDIT">EDIT</button>
+       <!--  <button type="button" id="saveProfileData" value="SAVE">SAVE</button> -->
+        <form:button id="saveProfileData" value="SAVE" disabled="true">SAVE</form:button>
+        
         </div>
  
         <div id="tab3" class="tab">
@@ -55,7 +149,9 @@
             <p>Tab #4 content goes here!</p>
             <p>Donec pulvinar neque sed semper lacinia. Curabitur lacinia ullamcorper nibh; quis imperdiet velit eleifend ac. Donec blandit mauris eget aliquet lacinia! Donec pulvinar massa interdum risus ornare mollis. In hac habitasse platea dictumst. Ut euismod tempus hendrerit. Morbi ut adipiscing nisi. Etiam rutrum sodales gravida! Aliquam tellus orci, iaculis vel.</p>
         </div>
+         
     </div>
+    </form:form>
 </div>
 
   </body> 

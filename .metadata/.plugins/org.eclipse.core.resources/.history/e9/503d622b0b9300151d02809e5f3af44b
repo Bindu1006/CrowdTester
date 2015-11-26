@@ -1,0 +1,56 @@
+package com.sjsu.controller;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.sjsu.BO.AppVendorDetails;
+import com.sjsu.BO.TesterDetails;
+import com.sjsu.service.IRegistrationService;
+
+@Controller
+@RequestMapping("register")
+public class registrationController {
+	
+	private IRegistrationService registrationService;
+	
+	public IRegistrationService getRegistrationService() {
+		return registrationService;
+	}
+
+	@Autowired
+	public void setRegistrationService(IRegistrationService registrationService) {
+		this.registrationService = registrationService;
+	}
+
+	@RequestMapping("/showTesterRegistration")
+	public String showTesterRegistration(HttpServletRequest request,
+			HttpServletResponse response, @ModelAttribute("testerDetails") TesterDetails testerDetails, Model model){
+		System.out.println("HIiiiii");
+		model.addAttribute("testerDetails", testerDetails);
+		return "TesterRegistrationPage";
+	}
+	
+	@RequestMapping("/showAppProviderRegistration")
+	public String showAppProviderRegistration(HttpServletRequest request,
+			HttpServletResponse response, @ModelAttribute("appVendorDetails") AppVendorDetails appVendorDetails, Model model){
+		System.out.println("HIiiiii");
+		model.addAttribute("appVendorDetails", appVendorDetails);
+		return "TesterRegistrationPage";
+	}
+	
+	@RequestMapping("/registerTester")
+	public String registerTester(HttpServletRequest request,
+			HttpServletResponse response, @ModelAttribute("testerDetails") TesterDetails testerDetails, Model model){
+		System.out.println(testerDetails );
+		String result = registrationService.saveTesterDetails(testerDetails);
+		System.out.println("REGISTER TESTER::::" +result);
+		return "SuccessPage";
+	}
+
+}

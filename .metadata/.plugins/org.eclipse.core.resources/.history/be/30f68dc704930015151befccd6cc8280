@@ -1,0 +1,11 @@
+package com.sjsu.dao;
+
+public class RegistrationDaoImpl implements IRegistrationDao {
+
+	@Override
+	public String saveTesterDetails() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

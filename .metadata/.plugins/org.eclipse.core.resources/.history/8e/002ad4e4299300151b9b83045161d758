@@ -1,0 +1,48 @@
+package com.sjsu.controller;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import com.sjsu.BO.TesterDetails;
+
+@Controller
+@RequestMapping("appVendor")
+public class AppVendorController {
+	
+	@RequestMapping("/showAppVendorDashboard")
+	public String showTesterDashboard(HttpServletRequest request,
+			HttpServletResponse response, @ModelAttribute("testerDetails") TesterDetails testerDetails, Model model){
+		
+		return "AppVendorDashboard";
+	}
+	
+	@RequestMapping("/showProfileform")
+	public String showProfileform(HttpServletRequest request,
+			HttpServletResponse response, @ModelAttribute("testerDetails") TesterDetails testerDetails, Model model){
+		System.out.println("HIiiiii");
+		model.addAttribute("testerDetails", testerDetails);
+		return "AppVendorProfileForm";
+	}
+	
+	@RequestMapping("/showBillingform")
+	public String showBillingform(HttpServletRequest request,
+			HttpServletResponse response, @ModelAttribute("testerDetails") TesterDetails testerDetails, Model model){
+		System.out.println("HIiiiii");
+		model.addAttribute("testerDetails", testerDetails);
+		return "BillingForm";
+	}
+	
+	@RequestMapping("/showAssistform")
+	public String showAssistform(HttpServletRequest request,
+			HttpServletResponse response, @ModelAttribute("testerDetails") TesterDetails testerDetails, Model model){
+		System.out.println("HIiiiii");
+		model.addAttribute("testerDetails", testerDetails);
+		return "AssistForm";
+	}
+
+}

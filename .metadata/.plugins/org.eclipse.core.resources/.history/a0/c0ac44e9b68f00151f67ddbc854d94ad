@@ -1,0 +1,7 @@
+package com.sjsu.BO;
+
+public class UserType {
+	
+	AppVendorDetails appVendorDetails;
+
+}

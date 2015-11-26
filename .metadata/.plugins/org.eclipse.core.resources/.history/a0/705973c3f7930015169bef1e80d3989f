@@ -1,0 +1,11 @@
+NotEmpty.appVendorDetails.name = Name is required!
+contactEmail = Email is required!
+NotEmpty.appVendorDetails.address = Address is required!
+NotEmpty.appVendorDetails.password = Password is required!
+NotEmpty.appVendorDetails.confirmPassword = Confirm password is required!
+NotEmpty.appVendorDetails.companyWebsite = Website is required!
+NotEmpty.appVendorDetails.phoneNumber = Number is required!
+NotEmpty.appVendorDetails.userName = UserName is required!
+Diff.appVendorDetails.confirmPassword = Passwords do not match, please retype!
+Pattern.appVendorDetails.email = Invalid Email format!	
+Pattern.appVendorDetails.phoneNumber = Invalid phone number!

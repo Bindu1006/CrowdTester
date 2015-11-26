@@ -1,0 +1,29 @@
+package com.sjsu.dao;
+
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.sjsu.BO.TesterDetails;
+
+public class RegistrationDaoImpl implements IRegistrationDao {
+
+	private SessionFactory sessionFactory;
+	 
+	public SessionFactory getSessionFactory() {
+	return sessionFactory;
+	}
+	 
+	@Autowired
+	public void setSessionFactory(SessionFactory sessionFactory) {
+	this.sessionFactory = sessionFactory;
+	}
+	
+	@Override
+	public String saveTesterDetails(TesterDetails testerDetails) {
+		System.out.println("SAVE TESTER DETAILS ::: In DAO class..");
+		Session session = getSessionFactory().getCurrentSession();
+		session.beginTransaction();
+	}
+
+}

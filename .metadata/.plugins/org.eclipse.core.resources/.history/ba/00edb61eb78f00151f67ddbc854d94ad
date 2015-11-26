@@ -1,0 +1,11 @@
+package com.sjsu.BO;
+
+public class UserType {
+	
+	private String userType;
+	
+	AppVendorDetails appVendorDetails;
+	
+	TesterDetails testerDetails;
+
+}

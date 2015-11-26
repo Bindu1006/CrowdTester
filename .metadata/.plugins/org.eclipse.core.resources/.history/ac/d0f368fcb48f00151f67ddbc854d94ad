@@ -1,0 +1,29 @@
+package com.sjsu.BO;
+
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
+@Entity
+@Table(name ="APP_VENDOR_Details")
+public class AppVendorDetails {
+	
+	private String companyName;
+	
+	private String phoneNumber;
+	
+	private String address;
+	
+	private String companySize;
+	
+	private String companyWebsite;
+	
+	private String contactEmail;
+	
+	private String userName;
+	
+	private String password;
+	
+	private String profileImage;
+	
+	
+}

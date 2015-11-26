@@ -95,7 +95,6 @@
                     <div class="panel panel-default">
                     
                         <div class="panel-heading">
-                        <h4><c:out value="${testerDetails.userName}"></c:out></h4>
                            <jsp:include page="ProfileHeader.jsp" flush="true" />
                             
                         </div>

@@ -1,0 +1,7 @@
+package com.sjsu.service;
+
+public interface IRegistrationService {
+	
+	String saveTesterDetails();
+
+}
