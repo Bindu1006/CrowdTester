@@ -21,6 +21,8 @@
 	<script type="text/javascript" language="javascript" src="../javascript/jquery-1.8.1.min.js"></script>  
 	<script type="text/javascript" language="javascript" src="../javascript/scripts.js"></script>  
 	<script type="text/javascript" language="javascript" src="../javascript/theme.js"></script>  
+	<script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	
     <!-- Add your custom script here --> 
   </head>  
   <body> 
@@ -28,8 +30,8 @@
     <ul class="tab-links">
         <li class="active"><a href="#tab1">My Profile</a></li>
         <li><a href="#tab2">Personal</a></li>
-        <li><a href="#tab3">Devices</a></li>
-        <li><a href="#tab4">Contact</a></li>
+        <li><a id="testDetails" href="#tab3">Test Details</a></li>
+        
     </ul>
      <form:form id="editTesterFormID" method="post" modelAttribute="testerDetails" action="editTesterProfile.do">
  
@@ -37,8 +39,8 @@
         <div id="tab1" class="tab active">
             <div>
             	<label>USERNAME        : </label>
-            	<c:out value="${testerDetails.userName}"></c:out>
-            </div>
+            	<c:out value="${testerDetails.userName}"></c:out></div>
+            <form:hidden id="userName" path="userName" value="${testerDetails.userName}"/>
             <div>
              
              <br/><br/><br/>
@@ -141,14 +143,11 @@
         </div>
  
         <div id="tab3" class="tab">
-            <p>Tab #3 content goes here!</p>
-            <p>Donec pulvinar neque sed semper lacinia. Curabitur lacinia ullamcorper nibh; quis imperdiet velit eleifend ac. Donec blandit mauris eget aliquet lacinia! Donec pulvinar massa interdum ri.</p>
+        	
+        	
         </div>
  
-        <div id="tab4" class="tab">
-            <p>Tab #4 content goes here!</p>
-            <p>Donec pulvinar neque sed semper lacinia. Curabitur lacinia ullamcorper nibh; quis imperdiet velit eleifend ac. Donec blandit mauris eget aliquet lacinia! Donec pulvinar massa interdum risus ornare mollis. In hac habitasse platea dictumst. Ut euismod tempus hendrerit. Morbi ut adipiscing nisi. Etiam rutrum sodales gravida! Aliquam tellus orci, iaculis vel.</p>
-        </div>
+      
          
     </div>
     </form:form>

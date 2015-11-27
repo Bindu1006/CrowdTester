@@ -1,8 +1,11 @@
 package com.sjsu.BO;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -58,6 +61,10 @@ public class TesterDetails {
 	
 	@Transient
 	private String confirmPassword;
+	
+	@Transient
+	@OneToMany(mappedBy="department")
+    private Set<TestingDetails> testingDetailsList;
 	
 
 	public String getConfirmPassword() {

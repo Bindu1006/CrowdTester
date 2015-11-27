@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <head>
 
     <meta charset="utf-8">
@@ -11,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Profile Form</title>
+    <title>Billing Form</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -31,6 +29,9 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+
+    
 
 </head>
 
@@ -49,21 +50,19 @@
                 </button>
                 <a class="navbar-brand" href="index.html">CrowdTester</a>
             </div>
-            
+            <!-- /.navbar-header -->
 
             <ul class="nav navbar-top-links navbar-right">
+                
                 <!-- /.dropdown -->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                         <i class="fa fa-user fa-fw"></i>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
-                        <li><a href="#"><i class="fa fa-user fa-fw"></i> User Profile</a>
-                        </li>
-                        <li><a href="#"><i class="fa fa-gear fa-fw"></i> Settings</a>
-                        </li>
-                        <li class="divider"></li>
-                        <li><a href="login.html"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
+                        
+                        
+                        <li><a href="../login/showLogin.do"><i class="fa fa-sign-out fa-fw"></i> Logout</a>
                         </li>
                     </ul>
                     <!-- /.dropdown-user -->
@@ -71,9 +70,9 @@
                 <!-- /.dropdown -->
             </ul>
             <!-- /.navbar-top-links -->
-			<!-- CUT AND PASTER IN SEPERATE JSP -->
+
+            <!-- CUT AND PASTER IN SEPERATE JSP -->
             <jsp:include page="TesterSideBar.jsp" flush="true" />
-            
             <!-- /.navbar-static-side -->
         </nav>
 
@@ -89,42 +88,36 @@
             </div>
             <!-- /.row -->
             <div class="row">
-           
                 <div class="col-lg-12">
-                
                     <div class="panel panel-default">
-                    
                         <div class="panel-heading">
                            <jsp:include page="ProfileHeader.jsp" flush="true" />
-                            
                         </div>
-                      
+                        
                        
-                        <!-- /.panel-body -->
                     </div>
-                     
-                    <!-- /.panel -->
+                   
                 </div>
-                <!-- /.col-lg-12 -->
+               
             </div>
-            <!-- /.row -->
+           
         </div>
-        <!-- /#page-wrapper -->
+       
 
     </div>
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../javascript/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../javascript/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="../bower_components/metisMenu/dist/metisMenu.min.js"></script>
+    <script src="../javascript/metisMenu.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="../dist/js/sb-admin-2.js"></script>
+    <script src="../javascript/sb-admin-2.js"></script>
 
 </body>
 
