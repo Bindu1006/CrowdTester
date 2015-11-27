@@ -59,7 +59,7 @@ public class TesterValidator implements Validator {
 			//String expression = "^(?=.{7,32}$)(\\(?\\+?[0-9]*\\)?)?[0-9_\\- \\(\\)]*((\\s?x\\s?|ext\\s?|extension\\s?)\\d{1,5}){0,1}$";  
 			//pattern = Pattern.compile("^(\\+\\d{1,2}\\s)?\\(?\\d{3}\\)?[\\s.-]?\\d{3}[\\s.-]?\\d{4}$");
 			// pattern = Pattern.compile(expression);
-			pattern = Pattern.compile("/^(\\+91-|\\+91|0|+)?\\d{10}$/");
+			pattern = Pattern.compile("/^(\\+91-|\\+91|0|\\+)?\\d{10}$/");
 		     matcher = pattern.matcher(testerDetails.getPhoneNumber());
 		      
     		 

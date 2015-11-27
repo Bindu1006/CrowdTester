@@ -103,7 +103,7 @@
              <tr><td>&nbsp;</td></tr>
              <tr>
              <td><label>Your Address        : </label></td>
-             <td><label>Your DOB        : </label></td>
+             <td><label>Your Age        : </label></td>
              </tr>
              <tr>
              <td><form:input id="Address" path="address" cssStyle="width: 95%" disabled="true"/></td>

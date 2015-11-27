@@ -90,8 +90,9 @@ public class LoginController {
 			return modelAndView;
 			//return "redirect:" + "../tester/showTesterDashboard.do";
 		} else {
-			model.addAttribute("userDetails", userTypeBO);
-			//return "redirect:" + "../appVendor/showAppVendorDashboard.do";
+			System.out.println("Login CONTROLLER::::" + userTypeBO.getAppVendorDetails());
+			model.addAttribute("appVendorDetails", userTypeBO.getAppVendorDetails());
+			redirectAttributes.addFlashAttribute("appVendorDetails", userTypeBO.getAppVendorDetails());
 			modelAndView.setViewName("redirect:" + "../appVendor/showAppVendorDashboard.do");
 			return modelAndView;
 		}

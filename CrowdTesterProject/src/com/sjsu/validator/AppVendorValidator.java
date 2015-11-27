@@ -85,8 +85,9 @@ public class AppVendorValidator implements Validator {
     		
     			//String expression = "^(?=.{7,32}$)(\\(?\\+?[0-9]*\\)?)?[0-9_\\- \\(\\)]*((\\s?x\\s?|ext\\s?|extension\\s?)\\d{1,5}){0,1}$";
     			//String expression = "^[2-9]{2}\d{8}";
-    			   
-    			 pattern = Pattern.compile("/^(\\+91-|\\+91|0|+)?\\d{10}$/");
+    			pattern = Pattern.compile("/^(\\+91-|\\+91|0|\\+)?\\d{10}$/");
+    			      
+    			// pattern = Pattern.compile(expression);
     		     matcher = pattern.matcher(appVendorDetails.getPhoneNumber());
     		      
         		 
