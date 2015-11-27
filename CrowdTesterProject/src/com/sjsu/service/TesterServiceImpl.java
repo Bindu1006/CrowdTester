@@ -1,9 +1,12 @@
 package com.sjsu.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.sjsu.BO.TesterDetails;
+import com.sjsu.BO.TestingDetails;
 import com.sjsu.dao.ILoginDao;
 import com.sjsu.dao.ITesterDao;
 
@@ -25,6 +28,12 @@ public class TesterServiceImpl implements ITesterService{
 	public String editTesterProfile(TesterDetails testerDetails) {
 		String result = testerDao.editTesterProfile(testerDetails);
 		return result;
+	}
+
+	@Override
+	public List<TestingDetails> retreiveTesterDetails(String userName) {
+		//TesterDetails testerDetails = testerDao.retreiveTesterDetails(userName);
+		return testerDao.retreiveTesterDetails(userName); 
 	}
 
 }

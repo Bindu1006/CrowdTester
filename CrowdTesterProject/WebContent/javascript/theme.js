@@ -124,9 +124,37 @@ $('#hmenu>ul').on('click', '.nav-click', function(){
 	
 });
 			 
-	setEqualHeight ( $('section.home .col header') );
-	setEqualHeight ( $('section.home .col p') );
+	
+	$('#testDetails').click(function(event){
+		var userName = $('#userName').val();
+		$.ajax({
+			url : 'ajaxShowTestDetails.do',
+			type:'POST',
+			data: 'userName='+userName,
+			success : function(response) {
+				
+				var result = "<table width='100%'><tbody>";
+				$( "#tab3" ).empty();
+				$.each(response, function(i) {
+					result += "<tr>"
+					result += "<td>" +response[i].userName + "</td>";
+					result += "<td>" +response[i].firstName + "</td>";
+					result += "<td>" +response[i].email + "</td>";
+					result += "<td>" +response[i].phoneNumber + "</td>";
+					result += "<td>" +response[i].occupation + "</td>";
+					result += "<td>" +response[i].education + "</td>";
+					result += "</tr>";
 
+		        });
+				result += "</tbody></table>";
+		$( "#tab3" ).append(result);
+			},
+			error : function(xhr, status, error) {
+				alert(xhr.responseText);
+			}
+		});
+	});
+	
 
 
 
