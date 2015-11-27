@@ -63,7 +63,7 @@
              <tr><td>&nbsp;</td></tr>
              <tr><td>&nbsp;</td></tr>
              <tr><td>&nbsp;</td></tr>
-             <tr>
+          <!--    <tr>
              <td colspan="2" align="center"><label>Password        : </label></td>
              </tr>
              <tr>
@@ -75,7 +75,7 @@
              </tr>
              <tr>
              <td colspan="2" align="center"><form:input path="password" /></td>
-             </tr>
+             </tr> -->
              </table>
        
             </div>
@@ -86,7 +86,7 @@
          <table width=100% align="center">
              <tr>
              <td><label>Company name        : </label></td>
-             <td align="left"><label>Company email         : </label></td>
+             <td ><label>Company email         : </label></td>
              </tr>
              <tr>
              <td><form:input id="Name" path="companyName" cssStyle="width: 95%" disabled="true"/></td>
@@ -117,9 +117,9 @@
              <tr><td>&nbsp;</td></tr><tr><td>&nbsp;</td></tr>
              
          </table>
-        <button type="button" id="editProfileData" value="EDIT">EDIT</button>
+        <button type="button" id="editAppVendorProfileData" value="EDIT">EDIT</button>
        <!--  <button type="button" id="saveProfileData" value="SAVE">SAVE</button> -->
-        <form:button id="saveProfileData" value="SAVE" disabled="true">SAVE</form:button>
+        <form:button id="saveAppVendorProfileData" value="SAVE" disabled="true">SAVE</form:button>
         
         </div>
  
