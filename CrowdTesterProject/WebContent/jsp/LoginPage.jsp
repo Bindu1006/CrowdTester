@@ -34,12 +34,12 @@
               <li> <a href="#">How it Works</a> </li>
               <li> <a href="#">Pricing</a> </li>
               <li> <a href="#">FAQ</a> </li>
-              <li> <a href="register/showAppProviderRegistration.do">Sign up</a> </li>
+              <li> <a href="../register/showAppProviderRegistration.do">Sign up</a> </li>
             </ul>
           </li>
           <li class="parent"> <a href="#">For Testers</a>
             <ul>
-              <li> <a href="register/showTesterRegistration.do">Become a Tester</a> </li>
+              <li> <a href="../register/showTesterRegistration.do">Become a Tester</a> </li>
               <li> <a href="#">The Community</a> </li>
               <li> <a href="#">FAQ</a> </li>
             </ul>
