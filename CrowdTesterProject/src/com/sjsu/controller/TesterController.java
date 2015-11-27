@@ -45,7 +45,7 @@ public class TesterController {
 	@RequestMapping("/showTesterDashboard")
 	public String showTesterDashboard(HttpServletRequest request,
 			HttpServletResponse response, @ModelAttribute("testerDetails") TesterDetails testerDetails, Model model){
-		System.out.println(testerDetails);
+		System.out.println("dashboard"+testerDetails);
 		HttpSession session = request.getSession();
 		session.setAttribute("sessionTesterDetails", testerDetails);
 
@@ -60,7 +60,7 @@ public class TesterController {
 		System.out.println("HIiiiii");
 		HttpSession session = request.getSession();
 		testerDetails = (TesterDetails) session.getAttribute("sessionTesterDetails");
-		System.out.println(testerDetails);
+		System.out.println("profile"+testerDetails);
 		model.addAttribute("testerDetails", testerDetails);
 		return "TesterProfileForm";
 	}
