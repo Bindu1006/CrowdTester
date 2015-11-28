@@ -1,8 +1,11 @@
 package com.sjsu.BO;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -56,8 +59,33 @@ public class TesterDetails {
 	@Column(name = "EXPERIENCE", nullable = false)
 	private String experience;
 	
+	@Column(name = "CREDITS", nullable = false)
+	private String credit="1";
+	
+	@Column(name = "RANKING", nullable = false)
+	private String ranking="1";
+	
+	public String getCredit() {
+		return credit;
+	}
+
+	public void setCredit(String credit) {
+		this.credit = credit;
+	}
+
+	public String getRanking() {
+		return ranking;
+	}
+
+	public void setRanking(String ranking) {
+		this.ranking = ranking;
+	}
+
+
 	@Transient
 	private String confirmPassword;
+	
+	
 	
 
 	public String getConfirmPassword() {

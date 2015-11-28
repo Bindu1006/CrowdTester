@@ -1,17 +1,26 @@
 package com.sjsu.controller;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.sjsu.BO.ApplicationDetails;
 import com.sjsu.BO.LoginDetails;
 import com.sjsu.BO.TesterDetails;
 import com.sjsu.service.ILoginService;
@@ -36,7 +45,7 @@ public class TesterController {
 	@RequestMapping("/showTesterDashboard")
 	public String showTesterDashboard(HttpServletRequest request,
 			HttpServletResponse response, @ModelAttribute("testerDetails") TesterDetails testerDetails, Model model){
-		System.out.println(testerDetails);
+		System.out.println("dashboard"+testerDetails);
 		HttpSession session = request.getSession();
 		session.setAttribute("sessionTesterDetails", testerDetails);
 
@@ -51,7 +60,7 @@ public class TesterController {
 		System.out.println("HIiiiii");
 		HttpSession session = request.getSession();
 		testerDetails = (TesterDetails) session.getAttribute("sessionTesterDetails");
-		System.out.println(testerDetails);
+		System.out.println("profile"+testerDetails);
 		model.addAttribute("testerDetails", testerDetails);
 		return "TesterProfileForm";
 	}
@@ -94,6 +103,41 @@ public class TesterController {
 			return "TesterProfileForm";
 		}
 		return "TesterAssistForm";
+	}
+	
+	@RequestMapping("/ajaxShowTestDetails")
+	public @ResponseBody JSONArray ajaxShowTestDetails(@RequestParam("userName") String userName){
+		System.out.println("Entered Ajax Method ::: METHODNAME ::: ajaxShowTestDetails");
+		System.out.println(userName);
+		List<ApplicationDetails> applicationDetailList = new ArrayList<ApplicationDetails>(); 
+		applicationDetailList = testerService.retreiveTesterDetails(userName); 
+		
+		// converting to JSON format from Java list 
+		JSONObject responseDetailsJson = new JSONObject();
+	    JSONArray jsonArray = new JSONArray();
+	    
+	    for(ApplicationDetails p : applicationDetailList) {
+	    	System.out.println(p.getApplicationID()+ "   " +p.getAppName());
+	    	JSONObject formDetailsJson = new JSONObject();
+	        formDetailsJson.put("appName" , p.getAppName());
+	        formDetailsJson.put("description", p.getDescription());
+	        formDetailsJson.put("testType" , p.getTestType());
+	        formDetailsJson.put("productOS", p.getProductOS());
+	        formDetailsJson.put("testDeadline" , p.getTestDeadLine());
+//	        formDetailsJson.put("education", p.getEducation());
+	        jsonArray.add(formDetailsJson);
+	    }
+	    
+	    // Debug messages 
+	    Iterator i = jsonArray.iterator();
+	                // take each value from the json array separately
+	         while (i.hasNext()) {
+	             JSONObject innerObj = (JSONObject) i.next();
+	              System.out.println(innerObj.get("userName"));
+	                }
+
+		return jsonArray;
+		
 	}
 
 	

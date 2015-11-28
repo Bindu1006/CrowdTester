@@ -1,6 +1,7 @@
 package com.sjsu.controller;
 
 import javax.servlet.http.HttpServletRequest;
+
 //import org.springframework.validation.annotation.Validated;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
@@ -21,7 +22,7 @@ import com.sjsu.BO.AppVendorDetails;
 import com.sjsu.BO.TesterDetails;
 import com.sjsu.service.IRegistrationService;
 import com.sjsu.validator.AppVendorValidator;
-
+import com.sjsu.validator.TesterValidator;
 @Controller
 @RequestMapping("register")
 public class registrationController {
@@ -38,7 +39,7 @@ public class registrationController {
 	}
 	 
 	private AppVendorValidator userValidator;
-	 
+	private TesterValidator testerValidator;
 
 	public AppVendorValidator getUserValidator() {
 		return userValidator;
@@ -47,6 +48,15 @@ public class registrationController {
 	@Autowired
 	public void setUserValidator(AppVendorValidator userValidator) {
 		this.userValidator = userValidator;
+	}
+	
+	public TesterValidator getTesterValidator() {
+		return testerValidator;
+	}
+
+	@Autowired
+	public void setTesterValidator(TesterValidator testerValidator) {
+		this.testerValidator = testerValidator;
 	}
 
 	@RequestMapping("/showTesterRegistration")
@@ -67,12 +77,25 @@ public class registrationController {
 	
 	@RequestMapping("/registerTester")
 	public String registerTester(HttpServletRequest request,
-			HttpServletResponse response, @ModelAttribute("testerDetails") TesterDetails testerDetails, Model model){
+			HttpServletResponse response, @ModelAttribute("testerDetails") @Valid TesterDetails testerDetails,BindingResult result, Model model){
+ModelAndView modelAndView = new ModelAndView();
+		
+		System.out.println("hi bindu1");
+		testerValidator.validate(testerDetails, result);
+       //System.out.println("bin"+result.getFieldValue("email"));
+        if (result.hasErrors()){
+        	
+        	
+        	return "TesterRegistrationPage";
+        }
+        else {
+		
 		System.out.println(testerDetails );
-		String result = registrationService.saveTesterDetails(testerDetails);
-		System.out.println("REGISTER TESTER::::" +result);
+		String result1 = registrationService.saveTesterDetails(testerDetails);
+		System.out.println("REGISTER TESTER::::" +result1);
 		return "SuccessPage";
 	}
+}
 	
 	@RequestMapping("/registerAppProvider")
 	public String registerTester(HttpServletRequest request,

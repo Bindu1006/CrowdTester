@@ -43,7 +43,7 @@ h4 {
     text-transform:uppercase;
 }
 form.register{
-    width:800px;
+    width:920px;
     margin: 20px auto 0px auto;
     height:530px;
     background-color:#fff;
@@ -60,23 +60,25 @@ form p{
 }
 form.register fieldset.row1
 {
-    width:770px;
+    width:870px;
     padding:5px;
     float:left;
-    border-top:1px solid #80c3ff;
+    border-top:1px;
     margin-bottom:15px;
 }
+
 form.register fieldset.row1 label{
-    width:140px;
+    width:90px;
     float: left;
     text-align: right;
     margin-right: 6px;
     margin-top:2px;
+    
 }
 form.register fieldset.row2
 {
     border-top:1px solid #80c3ff;
-    border-right:1px solid #80c3ff;
+    /* border-right:1px solid #80c3ff; */
     height:220px;
     padding:5px;
     float:left;
@@ -228,6 +230,3 @@ p.agreement label{
     text-align:left;
     margin-top:3px;
 }
-
-
-

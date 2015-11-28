@@ -45,8 +45,8 @@
 			<value>com.sjsu.BO.TesterDetails</value>
 			<value>com.sjsu.BO.AppVendorDetails</value>
 			<value>com.sjsu.BO.UploadAppBO</value>
-			
-			
+			<value>com.sjsu.BO.ApplicationDetails</value>
+
 		</list>
 		</property>
  	

@@ -69,7 +69,7 @@ public class AppVendorValidator implements Validator {
     		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "confirmPassword","confirmPassword");
     		
     		
-    		final String EMAIL_PATTERN = "^[_A-Za-z0-9-]+(\\." +
+    		/*final String EMAIL_PATTERN = "^[_A-Za-z0-9-]+(\\." +
     				"[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*" +
     				"(\\.[A-Za-z]{2,})$";
 
@@ -83,13 +83,27 @@ public class AppVendorValidator implements Validator {
     				errors.rejectValue("contactEmail", "Pattern.appVendorDetails.email");
     			}
     		
+<<<<<<< HEAD
     			//String expression = "^(?=.{7,32}$)(\\(?\\+?[0-9]*\\)?)?[0-9_\\- \\(\\)]*((\\s?x\\s?|ext\\s?|extension\\s?)\\d{1,5}){0,1}$";  
     			   
     			 pattern = Pattern.compile("^[0-9]{10}$");
+=======
+    			//String expression = "^(?=.{7,32}$)(\\(?\\+?[0-9]*\\)?)?[0-9_\\- \\(\\)]*((\\s?x\\s?|ext\\s?|extension\\s?)\\d{1,5}){0,1}$";
+    			//String expression = "^[2-9]{2}\d{8}";
+
+    			pattern = Pattern.compile("/^(\\+91-|\\+91|0|\\+)?\\d{10}$/");
+    			      
+    			// pattern = Pattern.compile(expression);
+
+>>>>>>> branch 'master' of https://github.com/shrutibidnur/CloudProjectRepo
     		     matcher = pattern.matcher(appVendorDetails.getPhoneNumber());
     		      
         		 
+<<<<<<< HEAD
         		// = pattern.matcher(appVendorDetails.getContactEmail());
+=======
+        		// matcher = pattern.matcher(appVendorDetails.getContactEmail());
+>>>>>>> branch 'master' of https://github.com/shrutibidnur/CloudProjectRepo
         			if(!matcher.matches()){
         					
         				errors.rejectValue("phoneNumber", "Pattern.appVendorDetails.phoneNumber");
@@ -98,7 +112,7 @@ public class AppVendorValidator implements Validator {
     		
     		if (!appVendorDetails.getPassword().equals(appVendorDetails.getConfirmPassword())) {
     			errors.rejectValue("confirmPassword", "Diff.appVendor.confirmPassword");
-    		}
+    		}*/
     		
     				
 	}

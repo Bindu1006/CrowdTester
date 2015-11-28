@@ -1,10 +1,13 @@
 package com.sjsu.BO;
 
 import java.sql.Blob;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -42,6 +45,9 @@ public class AppVendorDetails {
 	
 	@Transient
 	private String confirmPassword;
+
+//	@OneToMany(targetEntity=ApplicationDetails.class, mappedBy="appVendorUsername", fetch=FetchType.EAGER)
+//	private List<ApplicationDetails> applicationDetails;
 
 	public String getConfirmPassword() {
 		return confirmPassword;

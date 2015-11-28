@@ -32,6 +32,20 @@ $(document).ready( function() {
 //	    });
 //	    });
 	    
+	    
+	    
+	    
+	    $('#editAppVendorProfileData').click(function () {
+	    	$("#Name").prop("disabled",false)
+	    	$("#email").prop("disabled",false)
+	    	$("#Address").prop("disabled",false)
+	    	$("#Age").prop("disabled",false)
+	    	$("#Edu").prop("disabled",false)
+	    	$("#Occupation").prop("disabled",false)
+	    	$("#saveAppVendorProfileData").prop("disabled",false)
+	    	
+	    });
+	    
 	    $('#editProfileData').click(function () {
 	    	$("#Fname").prop("disabled",false)
 	    	$("#Lname").prop("disabled",false)
@@ -124,9 +138,37 @@ $('#hmenu>ul').on('click', '.nav-click', function(){
 	
 });
 			 
-	setEqualHeight ( $('section.home .col header') );
-	setEqualHeight ( $('section.home .col p') );
+	
+	$('#testDetails').click(function(event){
+		var userName = $('#userName').val();
+		$.ajax({
+			url : 'ajaxShowTestDetails.do',
+			type:'POST',
+			data: 'userName='+userName,
+			success : function(response) {
+				
+				var result = "<table width='100%'><tbody>";
+				$( "#resultTable" ).empty();
+				$.each(response, function(i) {
+					result += "<tr>"
+					result += "<td>" +response[i].appName + "</td>";
+					result += "<td>" +response[i].description + "</td>";
+					result += "<td>" +response[i].testType + "</td>";
+					result += "<td>" +response[i].productOS + "</td>";
+					result += "<td>" +response[i].testDeadline + "</td>";
+					result += "<td><a href='#'>Send Query</a></td>";
+					result += "</tr>";
 
+		        });
+				result += "</tbody></table>";
+		$( "#resultTable" ).append(result);
+			},
+			error : function(xhr, status, error) {
+				alert(xhr.responseText);
+			}
+		});
+	});
+	
 
 
 
