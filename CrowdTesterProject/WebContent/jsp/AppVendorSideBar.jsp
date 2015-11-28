@@ -30,6 +30,10 @@
                             <a href="../appVendor/showAppVendorAssistform.do"><i></i> Assistance</a>
                         </li>
                         
+                         <li>
+                            <a href="../appVendor/showUploadAppForm.do"><i></i>New Test Request </a>
+                        </li>
+                        
                     </ul>
                 </div>
                 <!-- /.sidebar-collapse -->

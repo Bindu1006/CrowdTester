@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.sjsu.BO.AppVendorDetails;
 import com.sjsu.BO.TesterDetails;
+import com.sjsu.BO.UploadAppBO;
 
 @Controller
 @RequestMapping("appVendor")
@@ -38,5 +39,13 @@ public class AppVendorController {
 		model.addAttribute("appVendorDetails", appVendorDetails);
 		return "AppVendorAssistForm";
 	}
-
+	
+	@RequestMapping("/showUploadAppForm.do")
+	public String showBillingform(HttpServletRequest request,
+			HttpServletResponse response, @ModelAttribute("uploadAppBO") UploadAppBO UploadAppBO, Model model){
+		System.out.println("HIiiiii");
+		model.addAttribute("UploadAppBO", UploadAppBO);
+		return "UploadAppForm";
+	}
+	
 }

@@ -83,13 +83,13 @@ public class AppVendorValidator implements Validator {
     				errors.rejectValue("contactEmail", "Pattern.appVendorDetails.email");
     			}
     		
-    			String expression = "^(?=.{7,32}$)(\\(?\\+?[0-9]*\\)?)?[0-9_\\- \\(\\)]*((\\s?x\\s?|ext\\s?|extension\\s?)\\d{1,5}){0,1}$";  
+    			//String expression = "^(?=.{7,32}$)(\\(?\\+?[0-9]*\\)?)?[0-9_\\- \\(\\)]*((\\s?x\\s?|ext\\s?|extension\\s?)\\d{1,5}){0,1}$";  
     			   
-    			 pattern = Pattern.compile(expression);
+    			 pattern = Pattern.compile("^[0-9]{10}$");
     		     matcher = pattern.matcher(appVendorDetails.getPhoneNumber());
     		      
         		 
-        		 matcher = pattern.matcher(appVendorDetails.getContactEmail());
+        		// = pattern.matcher(appVendorDetails.getContactEmail());
         			if(!matcher.matches()){
         					
         				errors.rejectValue("phoneNumber", "Pattern.appVendorDetails.phoneNumber");
