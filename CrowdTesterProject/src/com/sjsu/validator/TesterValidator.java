@@ -34,7 +34,7 @@ public class TesterValidator implements Validator {
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "email", "email");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "education", "education");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "experience", "experience");
-		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "education", "education");
+		//ValidationUtils.rejectIfEmptyOrWhitespace(errors, "education", "education");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "occupation", "occupation");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "preferredTestLang", "preferredTestLang");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "userName", "userName");
@@ -42,7 +42,7 @@ public class TesterValidator implements Validator {
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "confirmPassword","confirmPassword");
 		
 		
-		final String EMAIL_PATTERN = "^[_A-Za-z0-9-]+(\\." +
+		/*final String EMAIL_PATTERN = "^[_A-Za-z0-9-]+(\\." +
 				"[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*" +
 				"(\\.[A-Za-z]{2,})$";
 
@@ -72,7 +72,7 @@ public class TesterValidator implements Validator {
 		
 		if (!testerDetails.getPassword().equals(testerDetails.getConfirmPassword())) {
 			errors.rejectValue("confirmPassword", "Diff.appVendor.confirmPassword");
-		}
+		}*/
 		
 				
 	}

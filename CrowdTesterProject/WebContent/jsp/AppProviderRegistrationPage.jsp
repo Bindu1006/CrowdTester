@@ -16,29 +16,49 @@
                 <legend>Account Details
                 </legend>
                 <div>
-                    <label>Email *
-                    </label>
+                    <label>Email *</label>
                     <form:input path="contactEmail" placeholder="EMAIL"/>
                     <form:errors path="contactEmail" cssStyle="color: #ff0000;"/>
-                    <label>Username *
-                    </label>
+                    
+                  </div>
+                  
+                  <td><label>  </label></td>
+                  
+                  <div>  
+                    <label>Username *</label>
                     <form:input path="userName" placeholder="Username"/>
                     <form:errors path="userName" cssStyle="color: #ff0000;"/>
-               
-                <br></br>
+                    
+                    
+               </div></fieldset>
+               <br></br>
+               <fieldset class="row1">
+               	<div>
                     <label>Password *
                     </label>
                     <form:input path="password" placeholder="Password"/>
                     <form:errors path="password" cssStyle="color: #ff0000;"/>
+                  </div>
+                 <td><label>  </label></td>
+                  <div>  
                     <label>Confirm Password *
                     </label>
                     <form:input path="confirmPassword" placeholder="Password"/>
                     <form:errors path="confirmPassword" cssStyle="color: #ff0000;"/>
-                    <label class="obinfo">* obligatory fields
+                    <!-- <label class="obinfo">* obligatory fields -->
                     </label>
-                     </div>
+                    
+                    
+                   </div>
                 
             </fieldset>
+            
+            
+            
+            
+            
+            
+            
             <fieldset class="row2">
                 <legend>Company Details
                 </legend>
@@ -84,8 +104,3 @@
         </form:form>
     </body>
 </html>
-
-
-
-
-

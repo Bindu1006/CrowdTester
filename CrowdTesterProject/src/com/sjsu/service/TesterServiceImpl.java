@@ -5,8 +5,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.sjsu.BO.ApplicationDetails;
 import com.sjsu.BO.TesterDetails;
-import com.sjsu.BO.TestingDetails;
 import com.sjsu.dao.ILoginDao;
 import com.sjsu.dao.ITesterDao;
 
@@ -31,7 +31,7 @@ public class TesterServiceImpl implements ITesterService{
 	}
 
 	@Override
-	public List<TestingDetails> retreiveTesterDetails(String userName) {
+	public List<ApplicationDetails> retreiveTesterDetails(String userName) {
 		//TesterDetails testerDetails = testerDao.retreiveTesterDetails(userName);
 		return testerDao.retreiveTesterDetails(userName); 
 	}

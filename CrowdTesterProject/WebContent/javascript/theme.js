@@ -134,20 +134,20 @@ $('#hmenu>ul').on('click', '.nav-click', function(){
 			success : function(response) {
 				
 				var result = "<table width='100%'><tbody>";
-				$( "#tab3" ).empty();
+				$( "#resultTable" ).empty();
 				$.each(response, function(i) {
 					result += "<tr>"
-					result += "<td>" +response[i].userName + "</td>";
-					result += "<td>" +response[i].firstName + "</td>";
-					result += "<td>" +response[i].email + "</td>";
-					result += "<td>" +response[i].phoneNumber + "</td>";
-					result += "<td>" +response[i].occupation + "</td>";
-					result += "<td>" +response[i].education + "</td>";
+					result += "<td>" +response[i].appName + "</td>";
+					result += "<td>" +response[i].description + "</td>";
+					result += "<td>" +response[i].testType + "</td>";
+					result += "<td>" +response[i].productOS + "</td>";
+					result += "<td>" +response[i].testDeadline + "</td>";
+					result += "<td><a href='#'>Send Query</a></td>";
 					result += "</tr>";
 
 		        });
 				result += "</tbody></table>";
-		$( "#tab3" ).append(result);
+		$( "#resultTable" ).append(result);
 			},
 			error : function(xhr, status, error) {
 				alert(xhr.responseText);

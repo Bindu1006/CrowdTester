@@ -59,12 +59,33 @@ public class TesterDetails {
 	@Column(name = "EXPERIENCE", nullable = false)
 	private String experience;
 	
+	@Column(name = "CREDITS", nullable = false)
+	private String credit;
+	
+	@Column(name = "RANKING", nullable = false)
+	private String ranking;
+	
+	public String getCredit() {
+		return credit;
+	}
+
+	public void setCredit(String credit) {
+		this.credit = credit;
+	}
+
+	public String getRanking() {
+		return ranking;
+	}
+
+	public void setRanking(String ranking) {
+		this.ranking = ranking;
+	}
+
+
 	@Transient
 	private String confirmPassword;
 	
-	@Transient
-	@OneToMany(mappedBy="department")
-    private Set<TestingDetails> testingDetailsList;
+	
 	
 
 	public String getConfirmPassword() {

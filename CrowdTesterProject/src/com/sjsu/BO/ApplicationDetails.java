@@ -2,6 +2,7 @@ package com.sjsu.BO;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 
@@ -9,6 +10,7 @@ import javax.persistence.Table;
 @Table(name ="APP_Details")
 public class ApplicationDetails {
 	
+	@Id
 	@Column(name = "APPLICATION_ID", nullable = false)
 	private String applicationID;
 	
@@ -39,12 +41,12 @@ public class ApplicationDetails {
 	@Column(name = "APP_DOCUMENT", nullable = false)
 	private String appDocument;
 	
-	@Column(name = "APP_PROVIDER", nullable = false)
-	private String appProvider;
+//	@Column(name = "APP_PROVIDER", nullable = false)
+//	private String appProvider;
 	
-	@Column(name = "APP_VENDOR_DETAILS_USERNAME", nullable = false)
-	@JoinColumn(name = "userName")
-	private AppVendorDetails appVendorUsername;
+	//@Column(name = "APP_VENDOR_DETAILS_USERNAME", nullable = false)
+	@Column(name = "APP_VENDOR_DETAILS_USERNAME")
+	private String appVendorUsername;
 	
 	@Column(name = "APP_LANGUAGE", nullable = false)
 	private String appLanguage;
@@ -135,19 +137,19 @@ public class ApplicationDetails {
 		this.appDocument = appDocument;
 	}
 
-	public String getAppProvider() {
-		return appProvider;
-	}
+//	public String getAppProvider() {
+//		return appProvider;
+//	}
+//
+//	public void setAppProvider(String appProvider) {
+//		this.appProvider = appProvider;
+//	}
 
-	public void setAppProvider(String appProvider) {
-		this.appProvider = appProvider;
-	}
-
-	public AppVendorDetails getAppVendorUsername() {
+	public String getAppVendorUsername() {
 		return appVendorUsername;
 	}
 
-	public void setAppVendorUsername(AppVendorDetails appVendorUsername) {
+	public void setAppVendorUsername(String appVendorUsername) {
 		this.appVendorUsername = appVendorUsername;
 	}
 
@@ -182,8 +184,8 @@ public class ApplicationDetails {
 				+ ", testType=" + testType + ", productOS=" + productOS
 				+ ", testing=" + testing + ", testDeadLine=" + testDeadLine
 				+ ", downloadLink=" + downloadLink + ", appSize=" + appSize
-				+ ", appDocument=" + appDocument + ", appProvider="
-				+ appProvider + ", appVendorUsername=" + appVendorUsername
+				+ ", appDocument=" + appDocument
+				+ ", appVendorUsername=" + appVendorUsername
 				+ ", appLanguage=" + appLanguage + ", reportingLanguage="
 				+ reportingLanguage + ", cost=" + cost + "]";
 	}

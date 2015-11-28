@@ -143,7 +143,13 @@
         </div>
  
         <div id="tab3" class="tab">
-        	
+        	<label>USERNAME        : </label>
+            	<c:out value="${testerDetails.userName}"></c:out>
+            	
+            <br/><br/>
+            <div id="resultTable">
+            
+            </div>
         	
         </div>
  

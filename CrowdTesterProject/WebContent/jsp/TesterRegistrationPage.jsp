@@ -14,30 +14,41 @@
             <fieldset class="row1">
                 <legend>Account Details
                 </legend>
-                <p>
+                <div>
                     <label>Email *
                     </label>
                     <form:input path="email" placeholder="EMAIL"/>
                     <form:errors path="email" cssStyle="color: #ff0000;"/>
+                 </div>
+                 <td><label>  </label></td>
+                 <div>
                     <label>Username *
                     </label>
                     <form:input path="userName" placeholder="Username"/>
                     <form:errors path="userName" cssStyle="color: #ff0000;"/>
-                </p>
-                <p>
+                </div>
                 
+                </fieldset>
+               <br></br>
+               <fieldset class="row1">
+                <div>
                     <label>Password*
                     </label>
                     <form:input path="password" placeholder="Password"/>
                     <form:errors path="password" cssStyle="color: #ff0000;"/>
+                 </div>
+                 <td><label>  </label></td>
+                 <div>
                     <label>Confirm Password*
                     </label>
                     <form:input path="confirmPassword" placeholder="Password"/>
                     <form:errors path="confirmPassword" cssStyle="color: #ff0000;"/>
-                    <label class="obinfo">* obligatory fields
+                    
                     </label>
-                </p>
+                </div>
             </fieldset>
+            <br></br>
+            
             <fieldset class="row2">
                 <legend>Personal Details
                 </legend>
@@ -93,7 +104,7 @@
                 </p>
                
                  <p>
-                    <label class="long">Preffered Testing Languages *
+                    <label class="long">Testing Languages *
                     </label>
                     <form:input path="preferredTestLang" placeholder="Language" class="long"/>
                     <form:errors path="preferredTestLang" cssStyle="color: #ff0000;"/>
@@ -107,7 +118,7 @@
                  <p>
                     <label>Education *
                     </label>
-                    <form:input path="education" placeholder="Education" class="long" />
+                    <form:input path="education" placeholder="Education" maxlength="2" />
                     <form:errors path="education" cssStyle="color: #ff0000;"/>
 
                 </p>
@@ -125,8 +136,3 @@
         </form:form>
     </body>
 </html>
-
-
-
-
-

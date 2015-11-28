@@ -44,6 +44,7 @@
 		<list>
 			<value>com.sjsu.BO.TesterDetails</value>
 			<value>com.sjsu.BO.AppVendorDetails</value>
+			<value>com.sjsu.BO.ApplicationDetails</value>
 		</list>
 		</property>
  	
@@ -64,11 +65,11 @@
 	</bean>
 	
 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-		<property name="driverClassName" value="com.mysql.jdbc.Driver" />
-		<property name="url" value="jdbc:mysql://localhost:3306/crowdtester" />
-		<property name="username" value="root" />
-		<property name="password" value="bindu1006" ></property>
-
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+		<property name="url" value="jdbc:oracle:thin:CrowdTester@//172.16.85.141:1521/ORCL" />
+		<property name="username" value="SYSTEM" />
+		<property name="password" value="oracle" ></property>
+		
 	</bean>
     
 </beans>

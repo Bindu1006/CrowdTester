@@ -69,7 +69,7 @@ public class AppVendorValidator implements Validator {
     		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "confirmPassword","confirmPassword");
     		
     		
-    		final String EMAIL_PATTERN = "^[_A-Za-z0-9-]+(\\." +
+    		/*final String EMAIL_PATTERN = "^[_A-Za-z0-9-]+(\\." +
     				"[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*" +
     				"(\\.[A-Za-z]{2,})$";
 
@@ -99,7 +99,7 @@ public class AppVendorValidator implements Validator {
     		
     		if (!appVendorDetails.getPassword().equals(appVendorDetails.getConfirmPassword())) {
     			errors.rejectValue("confirmPassword", "Diff.appVendor.confirmPassword");
-    		}
+    		}*/
     		
     				
 	}
