@@ -32,6 +32,20 @@ $(document).ready( function() {
 //	    });
 //	    });
 	    
+	    
+	    
+	    
+	    $('#editAppVendorProfileData').click(function () {
+	    	$("#Name").prop("disabled",false)
+	    	$("#email").prop("disabled",false)
+	    	$("#Address").prop("disabled",false)
+	    	$("#Age").prop("disabled",false)
+	    	$("#Edu").prop("disabled",false)
+	    	$("#Occupation").prop("disabled",false)
+	    	$("#saveAppVendorProfileData").prop("disabled",false)
+	    	
+	    });
+	    
 	    $('#editProfileData').click(function () {
 	    	$("#Fname").prop("disabled",false)
 	    	$("#Lname").prop("disabled",false)
